@@ -215,15 +215,7 @@ function Table({transcript, listening, isModalOpen, setIsModalOpen}) {
                               }}>
                             <List
                                 itemLayout="horizontal"
-                                dataSource={Object.entries(data[status]).sort(([keyA, valueA], [keyB, valueB]) => {
-                                    if (verifiedKeys.includes(keyA) || verifiedKeys.includes(keyB)) {
-                                        return verifiedKeys.includes(keyA) ? 1 : -1;
-                                    }
-                                    if (!valueA || !valueB) {
-                                        return !valueA ? 1 : -1;
-                                    }
-                                    return 0;
-                                })}
+                                dataSource={Object.entries(data[status])}
                                 renderItem={(item, index) => (
                                     <List.Item>
                                         <div style={{display: 'flex', alignItems: 'center', width: '100%'}}>

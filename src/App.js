@@ -37,7 +37,7 @@ function App() {
         }}>
             <Row gutter={[16, 16]} style={{alignItems: 'center', overflow: 'hidden'}}>
                 <Col span={6} style={{ minHeight: '85vh' }}>
-                    <Card title={<Title level={4}>Welcome Dr. Tiwari</Title>} bordered={false} style={ cardStyle }>
+                    <Card title={<Title level={4}>Welcome</Title>} bordered={false} style={ cardStyle }>
                         <div>
                             {
                                 listening && (

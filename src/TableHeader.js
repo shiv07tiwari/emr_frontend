@@ -24,7 +24,7 @@ function TableHeader({patientDetails, verifiedKeys, handleVerification, listenin
                 <Title level={4} style={{
                     color: '#2952EF',
                     marginTop: '0px'
-                }}>{listening ? `Patient Info - ${patientDetails["patient_id"] ? patientDetails["patient_id"] : 'Loading..'}` : 'Start recording to load the data'}</Title>
+                }}>{`Basic Patient Information`}</Title>
                 <Row gutter={[16, 16]}>
                     {Object.entries(patientDetails).map(([key, value]) => (
                         <Col xs={24} sm={12} md={8} lg={6} key={key}>
