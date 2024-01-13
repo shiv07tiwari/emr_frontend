@@ -6,10 +6,10 @@ import SummaryModal from "./Modal";
 
 const {Title} = Typography;
 
-function Table({transcript, listening}) {
+function Table({transcript, listening, isModalOpen, setIsModalOpen}) {
     console.log("Listening: ", listening)
+    console.log("setModal", setIsModalOpen)
     const [prevTranscript, setPrevTranscript] = useState(undefined);
-    const [isModalOpen, setIsModalOpen] = useState(false);
 
     const [data, setData] = useState({
         patientDetails: {
@@ -23,7 +23,7 @@ function Table({transcript, listening}) {
             "patient_id": "",
             "height": "",
             "weight": "",
-            "bmi": ""
+            "BMI": ""
         },
         history: {
             "primary_care_physician": "",
@@ -64,7 +64,7 @@ function Table({transcript, listening}) {
         return str
             // Split the string into words
             .split('_')
-            // Capitalize the first letter of each word and add it with rest of the string
+            // Capitalize the first letter of each word and add it with the rest of the string
             .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
             // Join all the words into a single string, separated by spaces
             .join(' ');
@@ -90,7 +90,7 @@ function Table({transcript, listening}) {
             return;
         }
 
-        setData(prevState => {
+        setData(prevState=> {
             // Update each section only if it exists in the response
 
             // Display on top
@@ -215,15 +215,7 @@ function Table({transcript, listening}) {
                               }}>
                             <List
                                 itemLayout="horizontal"
-                                dataSource={Object.entries(data[status]).sort(([keyA, valueA], [keyB, valueB]) => {
-                                    if (verifiedKeys.includes(keyA) || verifiedKeys.includes(keyB)) {
-                                        return verifiedKeys.includes(keyA) ? 1 : -1;
-                                    }
-                                    if (!valueA || !valueB) {
-                                        return !valueA ? 1 : -1;
-                                    }
-                                    return 0;
-                                })}
+                                dataSource={Object.entries(data[status])}
                                 renderItem={(item, index) => (
                                     <List.Item>
                                         <div style={{display: 'flex', alignItems: 'center', width: '100%'}}>
@@ -257,9 +249,11 @@ function Table({transcript, listening}) {
                     </Col>
                 ))}
             </Row>
-            <Button onClick={() => {
-                setIsModalOpen(true);
-            }} type="primary" size="large" style={{marginTop: "16px", width: "100%"}}>Review Record</Button>
+            {/*<Button onClick={() => {*/}
+            {/*    setIsModalOpen(true);*/}
+            {/*}} type="primary" size="large" style={{marginTop: "16px", width: "100%"}}>*/}
+            {/*    Review Record*/}
+            {/*</Button>*/}
             <SummaryModal
                 isModalOpen={isModalOpen}
                 setOpen={setIsModalOpen}

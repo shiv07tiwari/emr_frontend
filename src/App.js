@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import {Button, Card, Typography, Row, Col, Tooltip, Spin} from "antd";
 import { SoundOutlined, StopOutlined, UndoOutlined } from '@ant-design/icons';
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
@@ -8,6 +8,7 @@ const { Title, Paragraph } = Typography;
 
 function App() {
     // Entry point of the application
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
     const {
       transcript,  // currently spoken text
@@ -36,11 +37,13 @@ function App() {
         }}>
             <Row gutter={[16, 16]} style={{alignItems: 'center', overflow: 'hidden'}}>
                 <Col span={6} style={{ minHeight: '85vh' }}>
-                    <Card title={<Title level={4}>Welcome Dr. Tiwari</Title>} bordered={false} style={ cardStyle }>
+                    <Card title={<Title level={4}>Welcome</Title>} bordered={false} style={ cardStyle }>
                         <div>
                             {
                                 listening && (
-                                    <Spin style={{marginBottom: '16px', alignItems: 'center'}} size="large" />
+                                    <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '16px' }}>
+                                        <Spin size="large" />
+                                    </div>
                                 )
                             }
                             <Button
@@ -82,13 +85,18 @@ function App() {
                                 </Paragraph>
                             </Card>
                         )}
+                        <Button onClick={() => {
+                            setIsModalOpen(true);
+                        }} type="primary" size="large" style={{marginTop: "16px", width: "100%"}}>
+                            Review Record
+                        </Button>
                     </Card>
                 </Col>
 
 
 
                 <Col span={18}>
-                    <Table transcript={transcript} listening={listening}/>
+                    <Table transcript={transcript} listening={listening} isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen}/>
                 </Col>
             </Row>
         </div>
