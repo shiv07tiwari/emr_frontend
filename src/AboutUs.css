@@ -1,0 +1,36 @@
+/* AboutUs.css */
+.about-us {
+    padding: 20px;
+  }
+  
+  .about-us h1 {
+    text-align: center;
+  }
+  
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    justify-items: center;
+  }
+  
+  .team-member {
+    border: 1px solid #ccc;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+    max-width: 200px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .team-member img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .team-member p {
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  

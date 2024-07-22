@@ -3,6 +3,7 @@ import {Button, Card, Typography, Row, Col, Tooltip, Spin} from "antd";
 import { SoundOutlined, StopOutlined, UndoOutlined } from '@ant-design/icons';
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
 import Table from "./Table";
+import Toolbar from "./ToolBar";
 import Transcript from "./components/transcript";
 
 const { Title } = Typography;
@@ -45,6 +46,7 @@ function App() {
             overflow: 'hidden',
             backgroundColor: '#ffffff'
         }}>
+            <Toolbar />
             <Row gutter={[16, 16]} style={{ overflow: 'hidden'}}>
                 <Col span={6} style={{ minHeight: '100px' }}>
                     <Card title={<Title level={4}>Welcome</Title>} bordered={false} style={ cardStyle }>
