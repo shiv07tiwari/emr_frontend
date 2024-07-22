@@ -3,14 +3,13 @@ import React from 'react';
 import './AboutUs.css';
 
 const teamMembers = [
-  { name: 'Mehul Arora', photo: 'photos/photo1.jpg' },
-  { name: 'Dhruv Agarwal', photo: 'photos/photo2.jpg' },
-  { name: 'Shivansh Tiwari', photo: 'photos/photo3.jpg' },
-  { name: 'Person 4', photo: 'photos/photo4.jpg' },
+  { name: 'Mehul Arora', photo: 'photos/mehul_arora.png' },
+  { name: 'Dhruv Agarwal', photo: 'photos/dhruv_agarwal.jpeg' },
+  { name: 'Shivansh Tiwari', photo: 'photos/shivansh_tiwari.jpeg' },
+  { name: 'Shriya Shetty', photo: 'photos/shriya_shetty.png' },
   { name: 'Garima Luthra', photo: '/photos/garima_luthra.jpeg' },
-  { name: 'Person 6', photo: 'photos/photo6.jpg' },
-  { name: 'Person 7', photo: 'photos/photo7.jpg' },
-  { name: 'Person 8', photo: 'photos/photo8.jpg' }
+  { name: 'Jillian Sweetland', photo: 'photos/jilian_sweetlang.png' },
+  { name: 'Gillian McMahon', photo: 'photos/gilian_macmahon.png' },
 ];
 
 function AboutUs()  {
